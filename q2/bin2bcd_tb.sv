@@ -5,5 +5,22 @@ module bin2bcd_tb;
   logic [3:0] bcd;
   logic carry;
 
-  // complete your tb
+  // complete your 
+  bin2bcd DUT (
+    .binary(binary),
+    .bcd(bcd),
+    .carry(carry)
+  );
+
+initial begin
+
+for(int i = 0; i<16; i++) begin
+  binary = i;
+  #10;
+end
+
+#10
+$finish
+end
+
 endmodule
